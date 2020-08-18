@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Membership Update</title>
+</head>
+<body>
+  <div class="container">
+    <center class="col-lg-m-4 col-lg-p-4">
+      <div class="container col-lg-8">
+        <div class="container">      
+            <div class="col-12 text-center" >
+              
+                <div class="col-12">
+                    <h4 class="mb-3 text-info">Member Resgistration Form</h4>
+                </div>
+                <center>
+                  <div class="se">
+                    
+                      <div class="mb-3 mt-2 input-group" style="display: flex">                                                             
+                                    <input type="text" id="search" class="form-control text-center border-info" placeholder="Enter your Ref. No. to update current details" aria-label="search" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-info" type="button" id="btnSearch">Search</button>
+                                    </div>                                        
+                      </div>              
+                  </div>
+                </center>
+            </div>
+        </div>    
+            <!-- End of row 1 -- Search and passport -->
+            <div class="col-sm-12 col-lg-4">
+              <div class="text-center col-sm-12 col-md-12">
+                <img src="img/user-placeholder.png" alt="passport" id="Passport" class="rounded-circle shadow" style="width: 150px; height: 150px;">
+                <a id="btnUpload" class="btn btn-info text-light mt-4 col-sm-12 col-md-12 "   style="outline:transparent; text-decoration: none !important;" role="button" onclick="performClick()">Choose passport</a>
+                <input type="file" onchange="onFileSelected(event)" id="file" hidden>
+            </div>
+            </div>
+
+
+                <div class="col-sm-12 col-lg-12  mt-4 mb-4">
+
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                          
+                              <div class="accordion col-sm-12" id="memberInfo">
+
+                                <div class="card">
+                                  <div class="card-header" id="personal">
+                                    <h2 class="mb-0">
+                                      <a class=" btn-link btn-block text-center text-info" type="button"
+                                      href="#" 
+                                        data-toggle="collapse" data-target="#personalInfoCollapse" aria-expanded="true" aria-controls="personalInfoCollapse">
+                                      Personal Information
+                                      </a>
+                                    </h2>
+                                  </div>                          
+                                  <div id="personalInfoCollapse" class="collapse show " aria-labelledby="personal" data-parent="#memberInfo">
+                                    <div class="card-body text-left">
+
+                                      <div class="row mt-4">                                    
+                                          <div class="col-md-12 mb-3"> 
+                                            <label for="Surname">Surname</label>          
+                                            <input type="text" class="form-control border-info" id="Surname" placeholder="Surname" required>
+                                            <div class="invalid-feedback">
+                                              Valid Surname is required.
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="col-md-12 mb-3 ">
+                                            <label for="firstName">First name</label>          
+                                            <input type="text" class="form-control border-info" id="firstName" placeholder="First Name" required>
+                                            <div class="invalid-feedback">
+                                              Valid first name is required.
+                                            </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-md-12 mb-3">
+                                            <label for="gender">Gender</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="gender" required>
+                                              <option>-Select-</option>
+                                              <option>Male</option>
+                                              <option>Female</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid Gender.
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-12 mb-3">
+                                            <label for="maritalStatus">Relationship Status</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="maritalStatus" required>
+                                              <option >-Select-</option>
+                                              <option >Single</option>
+                                              <option >Married</option>
+                                              <option >Engaged</option>
+                                              <option >Single Parent</option>
+                                              <option >Divorced</option>
+                                              <option >Separated</option>
+                                              <option >Widow</option>
+                                              <option >Widower</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid Status.
+                                            </div>
+                                          </div>
+                                        
+                                          <div hidden class="col-md-12 mb-3" id="marriageDay">
+                                            <label for="dayOfMarriage">Day of Marriage</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="dayOfMarriage">
+                                              <option >-Select-</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid day.
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-12 mb-3" id="marriage" hidden>
+                                            <label for="monthOfMarriage">Month of Marriage</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="monthOfMarriage" >
+                                              <option >-Select-</option>
+                                              <option value="1">January</option>
+                                              <option value="2">February</option>
+                                              <option value="3">March</option>
+                                              <option value="4">April</option>
+                                              <option value="5">May</option>
+                                              <option value="5">June</option>
+                                              <option value="7">July</option>
+                                              <option value="8">August</option>
+                                              <option value="9">September</option>
+                                              <option value="10">October</option>
+                                              <option value="11">November</option>
+                                              <option value="12">December</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid day.
+                                            </div>
+                                          </div>
+                                        
+                                          <div class="col-md-12 mb-3">
+                                            <label for="age">Age Bracket</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="gender" required>
+                                              <option >-Select-</option>
+                                              <option >1 - 10</option>
+                                              <option >11 - 20</option>
+                                              <option >21 - 30</option>
+                                              <option >31 - 40</option>
+                                              <option >41 - 50</option>
+                                              <option >51 - Above</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Please select a valid age range.
+                                            </div>
+                                          </div>
+
+
+                                          <div class="col-md-12 mb-3 "> 
+                                            <label for="firstName">Day of Birth</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="dayOfBirth" required>
+                                              <option >-Select-</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Valid Day is required.
+                                            </div>
+                                          </div> 
+
+                                          <div class="col-md-12 mb-3 "> 
+                                            <label for="firstName">Month of Birth</label>          
+                                            <select class="custom-select d-block w-100 border-info" id="dayOfBirth" required>
+                                              <option >-Select-</option>
+                                              <option value="1">January</option>
+                                              <option value="2">February</option>
+                                              <option value="3">March</option>
+                                              <option value="4">April</option>
+                                              <option value="5">May</option>
+                                              <option value="5">June</option>
+                                              <option value="7">July</option>
+                                              <option value="8">August</option>
+                                              <option value="9">September</option>
+                                              <option value="10">October</option>
+                                              <option value="11">November</option>
+                                              <option value="12">December</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                              Valid Month is required.
+                                            </div>
+                                          </div> 
+
+                                      </div> 
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- End of personal info form -->                                  
+                                                                                      
+                                <div class="card">
+                                  <div class="card-header" id="contact">
+                                    <h2 class="mb-0">
+                                      <a class="btn-link btn-block text-center  text-info" 
+                                      href="#" 
+                                      data-toggle="collapse" data-target="#contactCollapse" aria-expanded="true" aria-controls="contactCollapse">
+                                      Contact Information
+                                      </a>
+                                    </h2>
+                                  </div>                          
+                                  <div id="contactCollapse" class="collapse" aria-labelledby="contact" data-parent="#memberInfo">
+                                    <div class="card-body text-left">
+                                      <div class="row">
+                                          <div class="col-md-12 mb-3 ">
+                                            <label for="phone">Phone number</label>          
+                                            <input type="number" class="form-control border-info" id="phoneNumber" placeholder="Phone number" required>
+                                            <div class="invalid-feedback">
+                                              Valid phone number is required.
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-12 mb-3 ">
+                                            <label for="phone">Email</label>          
+                                            <input type="email" class="form-control border-info" id="email" placeholder="Email" required>
+                                            <div class="invalid-feedback">
+                                              Valid email is required.
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-12 mb-3 ">
+                                            <label for="phone">Residential Address</label>          
+                                            <input type="text" class="form-control border-info" id="address" placeholder="Address" required>
+                                            <div class="invalid-feedback">
+                                              Valid Address is required.
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-12 mb-3 ">
+                                            <label for="phone">Nearest Bus Stop</label>          
+                                            <input type="text" class="form-control border-info" id="bStop" placeholder="Bus Stop" required>
+                                            <div class="invalid-feedback">
+                                              Valid Bus Stop is required.
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- End of Contact info form --> 
+
+                                <div class="card">
+                                  <div class="card-header" id="employment">
+                                    <h2 class="mb-0">
+                                      <a class="btn-link btn-block text-center  text-info" type="button" 
+                                        data-toggle="collapse" data-target="#employmentCollapse" aria-expanded="true" aria-controls="employmentCollapse">
+                                      Carrier Information
+                                      </a>
+                                    </h2>
+                                  </div>                          
+                                  <div id="employmentCollapse" class="collapse" aria-labelledby="employment" data-parent="#memberInfo">
+                                    <div class="card-body text-left">
+                                      
+                                    <div class="row">
+                                      <div class="col-md-12 mb-3 "> 
+                                        <label for="Surname">Ocupation</label>          
+                                        <input type="text" class="form-control border-info" id="ocupation" placeholder="Ocupation" required>
+                                        <div class="invalid-feedback">
+                                          Valid ocupation is required.
+                                        </div>
+                                      </div>                                 
+
+                                      <div class="col-md-12 mb-3">
+                                        <label for="field">Feild</label>          
+                                        <select class="custom-select d-block w-100 border-info" id="field">
+                                          <option >-Select-</option>
+                                          <option >Agriculture &amp; Forestry/Wildlife</option>
+                                          <option >Education</option>
+                                          <option >Finance And Insurance</option>
+                                          <option >Food And Hospitality</option>
+                                          <option >ICT</option>
+                                          <option >Law</option>
+                                          <option >Gaming</option>
+                                          <option >Health Services</option>
+                                          <option >Natural Resources/Environmental</option>
+                                          <option >Personal Services</option>
+                                          <option >Real Estate &amp; Housing</option>
+                                          <option >Transportation</option>
+                                          <option >Construction/Utilities/Contracting</option>
+                                          <option >Business &amp; Information</option>
+                                          <option >Engineering</option>
+                                          <option >Oil &amp; Gas</option>
+                                          <option >Others</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                          Please select a valid Gender.
+                                        </div>
+                                      </div>
+
+                                      <label class="text-info text-center col-12" style="width: 100%;"> Employment </label>                                   
+                                      <div class="col-md-12 mb-3 "> 
+                                        <label>Name of Company </label>          
+                                        <input type="text" class="form-control border-info" id="companyName" placeholder="Company" required>
+                                        <div class="invalid-feedback">
+                                          Valid Company name is required.
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="col-md-12 mb-3 "> 
+                                        <label>Position</label>          
+                                        <input type="text" class="form-control border-info" id="postion" placeholder="Position in the company" required>
+                                        <div class="invalid-feedback">
+                                          Valid Position is required.
+                                        </div>
+                                      </div>
+                                      <div class="col-md-12 mb-3 "> 
+                                        <label>Experience in years</label>          
+                                        <input type="text" class="form-control border-info" id="yearsOfExperience" placeholder="Work Experience" required>
+                                        <div class="invalid-feedback">
+                                          Valid year of experience is required.
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="col-md-12 mb-3 "> 
+                                        <label for="firstName">Educational Qualification</label>          
+                                        <select class="custom-select d-block w-100 border-info" id="gender" required>
+                                          <option >-Select-</option>
+                                          <option >FSLC</option>
+                                          <option >SSC</option>
+                                          <option >NCE</option>
+                                          <option >OND</option>
+                                          <option >HND</option>
+                                          <option >Bachelors Degree</option>
+                                          <option >Masters Degree</option>
+                                          <option >PHD</option>
+                                          <option >Others</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                          Valid qualification is required.
+                                        </div>
+                                      </div> 
+
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- End of Employment info form --> 
+
+                                
+
+                              </div>   
+                        </div>
+                        
+                        <div class="container text-center">
+                          <input type="submit" value="SAVE" class="btn btn-info mt-4 col-sm-12 col-lg-6">
+                        </div>
+                    </form>
+
+                    <div class="text-right mt-4">
+                      <a href="https://churchplus.co/" class="" target="_blank">Powered By ChurchPlus</a>
+                    </div>
+                </div>
+        </div>
+      </center>        
+    </div>
+  
+    <script src="js/jquery.js"></script>  
+    <script src="js/jquery-3.5.1.slim.min.js"></script>          
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/main.js"></script>
+</body>
+</html>

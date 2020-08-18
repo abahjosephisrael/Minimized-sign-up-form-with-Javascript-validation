@@ -1,0 +1,11 @@
+.se{        
+    width: 70%;
+}
+a{
+	text-decoration: underline !important;
+}
+@media(max-width:600px){
+    .se{
+        width: 100%;        
+    }
+}
